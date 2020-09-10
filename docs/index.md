@@ -1,8 +1,9 @@
+---
+layout: default
+---
 # Exposure Notification Reference Server
 
 [COVID‑19 Exposure Notifications API](https://www.google.com/covid19/exposurenotifications/)
-
-[Exposure Notification Reference Server Documentation](https://google.github.io/exposure-notifications-server/) 
 
 In our continued effort to help governments and health authorities during the
 COVID-19 pandemic, we have authored an open source reference implementation of
@@ -20,19 +21,19 @@ to get started quickly.
 
 ## Overview
 
-The server is responsible for the following functions:
+The Exposure Notification Server is responsible for the following functions:
 
 * Accepting the temporary exposure keys of affected users from mobile devices.
 
-* Validating the temporary exposure keys using the device attestation API.
+* Validating the temporary exposure keys using a [configurable third-party
+  verification service](design/verification_protocol.md).
 
 * Storing the temporary exposure keys in a database.
 
 * Periodically generating incremental files that will be downloaded by mobile
-  devices to perform the key matching algorithm on the mobile device.
+  devices to perform the key-matching algorithm on the mobile device.
 
-* Sending a public key to devices, and digitally signing the incremental files with
-  a private key.
+* Sending a public key to devices, and digitally signing the incremental files with a private key.
 
 * Periodically deleting old temporary exposure keys. After 14 days, or
   configured time period, the exposure keys can no longer be matched to a device.
@@ -42,21 +43,15 @@ The server is responsible for the following functions:
 You can read tutorials on deploying and using the reference Exposure Notification
 Server here:
 
-* [Overview](https://google.github.io/exposure-notifications-server/)
-* [Deployment Guide](https://google.github.io/exposure-notifications-server/getting-started/deploying)
-* [Reference Documentation](https://pkg.go.dev/mod/github.com/google/exposure-notifications-server)
-* [Server Functional Requirements](https://google.github.io/exposure-notifications-server/server_functional_requirements)
-* [Server Deployment Options](https://google.github.io/exposure-notifications-server/server_deployment_options)
+* [Deployment guide](getting-started/deploying.md)
+* [Contributor guide](https://github.com/google/exposure-notifications-server/blob/master/CONTRIBUTING.md)
+* [Server Functional Requirements](server_functional_requirements.md)
+* [Server Deployment Options](server_deployment_options.md)
+* [Reference documentation](https://pkg.go.dev/mod/github.com/google/exposure-notifications-server)
 
 ## Issues and Questions
 
 You can open a
 [GitHub Issue](https://github.com/google/exposure-notifications-server/issues/new).
-Please be sure to include as much detail as you can to help aid in addressing
-your concern. If you wish to reach out privately, you can send an e-mail
-exposure-notifications-feedback@google.com.
-
-## Contributing to this project
-
-Contributions to this project are welcomed. For more information about
-contributing to this project, see the [contribution guidelines](CONTRIBUTING.md).
+or reach out privately by emailing exposure-notifications-feedback@google.com.
+Please include as much detail as you can to help in addressing your concern.
