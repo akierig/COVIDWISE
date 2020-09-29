@@ -31,15 +31,7 @@
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSExceptionDomains</key>
-		<dict>
-			<key>vdhmessaginghub.vdh.virginia.gov</key>
-			<dict>
-				<key>NSExceptionAllowsInsecureHTTPLoads</key>
-				<true/>
-				<key>NSIncludesSubdomains</key>
-				<false/>
-			</dict>
-		</dict>
+		<dict/>
 	</dict>
 	<key>UIAppFonts</key>
 	<array>
